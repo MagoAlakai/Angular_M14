@@ -22,14 +22,15 @@
         <td>Nº-{{painting.tienda_id}}</td>
         <td>
           <i class="bi bi-pencil-fill me-3"></i>
-          <i class="bi bi-trash-fill me-3"></i>
+          <i class="bi bi-trash-fill me-3 text-danger" (click)="deletePainting(painting.id)"></i>
         </td>
       </tr>
     </tbody>
   </table>
 
   <div class="d-flex justify-content-center mb-5">
-    <button [routerLink]="'/shops'" class="btn btn-outline-primary">Back to Shops</button>
+    <button [routerLink]="'/shops'" class="btn btn-outline-primary me-5">Back to Shops List</button>
+    <button (click)="deleteAllPaintings()" class="btn btn-outline-danger me-5">Delete all paintings</button>
   </div>
 
 </div>

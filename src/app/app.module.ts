@@ -2,9 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-
-
 import { AppRoutingModule } from './app-routing.module';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { ShopsComponent } from './shops/shops.component';
 import { PaintingsComponent } from './paintings/paintings.component';
@@ -27,8 +28,10 @@ import { PaintingsByShopComponent } from './paintings-by-shop/paintings-by-shop.
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    HttpClientModule
-
+    HttpClientModule,
+    SweetAlert2Module,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
