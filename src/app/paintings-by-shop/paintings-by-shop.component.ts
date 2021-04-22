@@ -53,23 +53,28 @@ export class PaintingsByShopComponent implements OnInit {
     }
 
     deletePainting = async(id: number) => {
-      if(confirm('Are you sure you want to delete this painting?')){
-        this.paintingsByShopService.deletePaintingById(id)
-        .then(res =>{
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.paintingsByShopService.deletePaintingById(id);
           this.enviarAlertDeleted();
-        }).catch(err =>{
-          this.errorAlertDeleted();
-        }).finally(()=> this.getPaintings())
-      }
+        }
+      }).finally(()=> this.getPaintings());
     }
 
     enviarAlertDeleted(){
-      Swal.fire({
-        title: 'Painting deleted',
-        text: 'This painting from this shop has been burned!',
-        icon: 'success',
-        confirmButtonText: 'Ok',
-      });
+      Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+      );
     }
 
     errorAlertDeleted(){
