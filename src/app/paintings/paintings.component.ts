@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PaintingsService } from '../services/paintings.service';
+import { Painting } from './../models/Painting';
 
 @Component({
   selector: 'app-paintings',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaintingsComponent implements OnInit {
 
-  constructor() { }
+  public paintings$: Promise<Painting[]> | undefined;
+  constructor(
+    private paintingsService: PaintingsService
+  ) { }
 
   ngOnInit(): void {
+    this.paintings$ = this.paintingsService.getAllPaintings();
+    console.log(this.paintings$);
   }
 
 }

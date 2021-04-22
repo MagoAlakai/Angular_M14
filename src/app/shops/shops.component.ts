@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ShopsService } from '../services/shops.service';
+import { Shop } from './../models/Shop';
 
 @Component({
   selector: 'app-shops',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShopsComponent implements OnInit {
 
-  constructor() { }
+  public shops$: Promise<Shop[]> | undefined;
+
+  constructor(
+    private shopsService: ShopsService
+  ) { }
 
   ngOnInit(): void {
+    this.shops$ = this.shopsService.getAllShops();
+    console.log(this.shops$);
   }
 
 }
