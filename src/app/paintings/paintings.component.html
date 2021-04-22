@@ -1,31 +1,29 @@
-<div class="container" style="height:80vh">
-    <h2 class="display-5 text-center mt-3 mb-4">Paintings</h2>
-    <table class="table table-striped">
+<div class="container">
+    <h1 class="display-6 text-center mt-3 mb-4">Paintings</h1>
+    <table class="table table-striped mb-4">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
+          <th class="col-1" scope="col">#</th>
+          <th class="col-3" scope="col">Name</th>
+          <th class="col-1" scope="col">Price</th>
+          <th class="col-2" scope="col">Arrival</th>
+          <th class="col-3" scope="col">Author</th>
+          <th class="col-1" scope="col">Store Nº</th>
+          <th class="col-1" scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td colspan="2">Larry the Bird</td>
-          <td>@twitter</td>
+        <tr *ngFor="let painting of paintings$ | async">
+          <th class="align-middle">{{painting.id}}</th>
+          <td>{{painting.name}}</td>
+          <td>{{painting.price}}.00 €</td>
+          <td>{{painting.arrival_date}}</td>
+          <td>{{painting.author_name}}</td>
+          <td>Nº-{{painting.tienda_id}}</td>
+          <td>
+            <i class="bi bi-pencil-fill me-3"></i>
+            <i class="bi bi-trash-fill me-3"></i>
+          </td>
         </tr>
       </tbody>
     </table>

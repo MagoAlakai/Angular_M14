@@ -1,0 +1,35 @@
+<div class="container" style="min-height: 85vh">
+  <h1 class="display-6 text-center mt-3 mb-4">Paintings at shop: {{name}}</h1>
+  <table class="table table-striped mb-4">
+    <thead>
+      <tr>
+        <th class="col-1" scope="col">#</th>
+        <th class="col-3" scope="col">Name</th>
+        <th class="col-1" scope="col">Price</th>
+        <th class="col-2" scope="col">Arrival</th>
+        <th class="col-3" scope="col">Author</th>
+        <th class="col-1" scope="col">Store Nº</th>
+        <th class="col-1" scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let painting of paintingsByShop$ | async">
+        <th class="align-middle">{{painting.id}}</th>
+        <td>{{painting.name}}</td>
+        <td>{{painting.price}}.00 €</td>
+        <td>{{painting.arrival_date}}</td>
+        <td>{{painting.author_name}}</td>
+        <td>Nº-{{painting.tienda_id}}</td>
+        <td>
+          <i class="bi bi-pencil-fill me-3"></i>
+          <i class="bi bi-trash-fill me-3"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="d-flex justify-content-center mb-5">
+    <button [routerLink]="'/shops'" class="btn btn-outline-primary">Back to Shops</button>
+  </div>
+
+</div>

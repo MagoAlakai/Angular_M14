@@ -11,6 +11,7 @@ import { PaintingsComponent } from './paintings/paintings.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PaintingsByShopComponent } from './paintings-by-shop/paintings-by-shop.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FooterComponent } from './components/footer/footer.component';
     PaintingsComponent,
     HomeComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    PaintingsByShopComponent
   ],
   imports: [
     BrowserModule,
