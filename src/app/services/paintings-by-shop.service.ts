@@ -30,4 +30,7 @@ export class PaintingsByShopService {
   deletePaintingById = async(id:number):Promise<Object>=>{
     return await this.httpClient.delete(`${this.url}paintings/${id}`).toPromise() as Promise<Object>;
   }
+  // createPaintingInShop = async(painting:Painting):Promise<Object> =>{
+  //   return await this.httpClient.post(`${this.url}paintings`, painting).toPromise();
+  // }
 }

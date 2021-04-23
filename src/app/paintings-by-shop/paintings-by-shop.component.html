@@ -1,5 +1,6 @@
 <div class="container" style="min-height: 85vh">
   <h1 class="display-6 text-center mt-3 mb-4">Paintings at shop: {{name}}</h1>
+  <button [routerLink]="'/shops'" class="btn btn-outline-primary">Back to Shops List</button>
   <table class="table table-striped mb-4">
     <thead>
       <tr>
@@ -28,8 +29,8 @@
     </tbody>
   </table>
 
-  <div class="d-flex justify-content-center mb-5">
-    <button [routerLink]="'/shops'" class="btn btn-outline-primary me-5">Back to Shops List</button>
+  <div class="d-flex justify-content-center pb-4">
+    <button [routerLink]="'/painting-form/0'" class="btn btn-outline-primary me-5">Create Painting</button>
     <button (click)="deleteAllPaintings()" class="btn btn-outline-danger me-5">Delete all paintings</button>
   </div>
 

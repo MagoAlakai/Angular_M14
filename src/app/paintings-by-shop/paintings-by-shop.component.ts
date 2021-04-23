@@ -20,7 +20,7 @@ export class PaintingsByShopComponent implements OnInit {
 
   constructor(
     private paintingsByShopService: PaintingsByShopService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
@@ -38,51 +38,51 @@ export class PaintingsByShopComponent implements OnInit {
     }
   }
 
-    deleteAllPaintings = async() => {
-      this.paintingsByShop$ = this.paintingsByShopService.deletePaintings(this.shopId);
-      this.enviarAlertAllDeleted();
-    }
+  deleteAllPaintings = async() => {
+    this.paintingsByShop$ = this.paintingsByShopService.deletePaintings(this.shopId);
+    this.enviarAlertAllDeleted();
+  }
 
-    enviarAlertAllDeleted(){
-      Swal.fire({
-        title: 'Paintings deleted',
-        text: 'All paintings from this shop have been burned!',
-        icon: 'success',
-        confirmButtonText: 'Ok',
-      });
-    }
+  enviarAlertAllDeleted(){
+    Swal.fire({
+      title: 'Paintings deleted',
+      text: 'All paintings from this shop have been burned!',
+      icon: 'success',
+      confirmButtonText: 'Ok',
+    });
+  }
 
-    deletePainting = async(id: number) => {
-      Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          this.paintingsByShopService.deletePaintingById(id);
-          this.enviarAlertDeleted();
-        }
-      }).finally(()=> this.getPaintings());
-    }
+  deletePainting = async(id: number) => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.paintingsByShopService.deletePaintingById(id);
+        this.enviarAlertDeleted();
+      }
+    }).finally(()=> this.getPaintings());
+  }
 
-    enviarAlertDeleted(){
-      Swal.fire(
-            'Deleted!',
-            'Your file has been deleted.',
-            'success'
-      );
-    }
+  enviarAlertDeleted(){
+    Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+    );
+  }
 
-    errorAlertDeleted(){
-      Swal.fire({
-        title: 'This painting can not be deleted',
-        icon: 'error',
-        confirmButtonText: 'Ok',
-      });
-    }
+  errorAlertDeleted(){
+    Swal.fire({
+      title: 'This painting can not be deleted',
+      icon: 'error',
+      confirmButtonText: 'Ok',
+    });
+  }
 
 }

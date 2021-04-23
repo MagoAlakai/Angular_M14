@@ -1,0 +1,54 @@
+<!-- <div class="container" style="min-height: 85vh">
+
+  <h1 class="display-6 text-center mt-3 mb-4">Create painting in this Shop</h1>
+
+  <div class="d-flex justify-content-center pb-4">
+    <button [routerLink]="'/shops'" class="btn btn-outline-primary">Back to Shops List</button>
+  </div>
+
+  <form [formGroup]="paintingForm" (ngSubmit)="onSubmit(paintingForm)">
+
+    <div class="d-flex justify-content-center row">
+
+      <div class="form-group col-5">
+        <label class="mb-2" for="name">Name</label>
+        <input [ngClass]="{'is-invalid':paintingForm.get('name')?.hasError('required')}" class="form-control" id="name" placeholder="Enter name" formControlName='name'>
+        <div class="invalid-feedback"></div>
+      </div>
+
+      <div class="form-group col-3">
+        <label class="mb-2" for="price">Price</label>
+        <input type="number" [ngClass]="{'is-invalid':paintingForm.get('price')?.hasError('required')}" class="form-control" id="price" formControlName='price'>
+        <div class="invalid-feedback"></div>
+      </div>
+
+    </div>
+
+    <div class="d-flex justify-content-center row">
+
+      <div class="form-group col-3">
+        <label class="mb-2" for="arrival_date">Arrival</label>
+        <input type="date" [ngClass]="{'is-invalid':paintingForm.get('arrival_date')?.hasError('required')}" class="form-control" id="arrival_date" placeholder="Enter arrival date" formControlName='arrival_date'>
+        <div class="invalid-feedback"></div>
+      </div>
+
+      <div class="form-group col-3">
+        <label class="mb-2" for="author_name">Author Name</label>
+        <input [ngClass]="{'is-invalid':paintingForm.get('author_name')?.hasError('required')}" class="form-control" id="author_name" placeholder="Enter author name" formControlName='author_name'>
+        <div class="invalid-feedback"></div>
+      </div>
+
+      <div class="form-group col-2">
+        <label class="mb-2" for="tienda_id">Shop</label>
+        <input type="number" [ngClass]="{'is-invalid':paintingForm.get('tienda_id')?.hasError('required')}" class="form-control" id="tienda_id" formControlName='tienda_id'>
+        <div class="invalid-feedback"></div>
+      </div>
+
+    </div>
+
+    <div class="d-flex col-8 mx-auto mt-3">
+      <button type="submit" class="btn btn-outline-primary w-100" [disabled]="paintingForm.invalid">Create Painting</button>
+    </div>
+  </form>
+
+</div> -->

@@ -16,13 +16,16 @@
         <td>{{shop.name}}</td>
         <td>{{shop.capacity}} paintings</td>
         <td class="d-flex">
-          <i class="bi bi-eye-fill me-3" [routerLink]="'/shops/'+ shop.id"></i>
-          <i class="bi bi-pencil-fill me-3"></i>
+          <i class="bi bi-eye-fill me-3" [routerLink]="'/shops/'+shop.id"></i>
+          <i class="bi bi-pencil-fill me-3" [routerLink]="'/shop-form/'+shop.id"></i>
           <i class="bi bi-trash-fill me-3 text-danger"></i>
         </td>
       </tr>
-
     </tbody>
   </table>
+
+  <div class="d-flex justify-content-center mb-5">
+    <button [routerLink]="'/shop-form/0'" class="btn btn-outline-primary me-5">Create Shop</button>
+  </div>
 
 </div>
