@@ -14,7 +14,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PaintingsByShopComponent } from './paintings-by-shop/paintings-by-shop.component';
 import { ShopFormComponent } from './shop-form/shop-form.component';
-//import { PaintingFormComponent } from './painting-form/painting-form.component';
+import { PaintingFormComponent } from './painting-form/painting-form.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { ShopFormComponent } from './shop-form/shop-form.component';
     FooterComponent,
     PaintingsByShopComponent,
     ShopFormComponent,
-    //PaintingFormComponent
+    PaintingFormComponent
   ],
   imports: [
     BrowserModule,

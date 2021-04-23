@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ShopsService } from '../services/shops.service';
 import { Shop } from './../models/Shop';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-shops',
@@ -12,12 +14,42 @@ export class ShopsComponent implements OnInit {
   public shops$: Promise<Shop[]> | undefined;
 
   constructor(
-    private shopsService: ShopsService
+    private shopsService: ShopsService,
+    private router:Router
   ) { }
 
   ngOnInit(): void {
+    this.getShops();
+  }
+
+  getShops = async() =>{
     this.shops$ = this.shopsService.getAllShops();
-    console.log(this.shops$);
+  }
+
+  deleteShop = async(id: number) => {
+
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.shopsService.deleteShop(id);
+        this.enviarAlertDeleted();
+      }
+    }).finally(()=> this.ngOnInit());
+  }
+
+  enviarAlertDeleted(){
+    Swal.fire(
+          'Deleted!',
+          'Your shop has been deleted.',
+          'success'
+    );
   }
 
 }

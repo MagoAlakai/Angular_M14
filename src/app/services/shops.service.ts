@@ -21,4 +21,8 @@ export class ShopsService {
   createShop = async(shop:Shop):Promise<Object> =>{
     return await this.httpClient.post(`${this.url}shops`, shop).toPromise();
   }
+
+  deleteShop = async(id:number):Promise<Object>=>{
+    return await this.httpClient.delete(`${this.url}shops/${id}`).toPromise() as Promise<Object>;
+  }
 }

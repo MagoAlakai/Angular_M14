@@ -42,7 +42,7 @@ export class PaintingsComponent implements OnInit {
   enviarAlertDeleted(){
     Swal.fire(
           'Deleted!',
-          'Your file has been deleted.',
+          'Your painting has been deleted.',
           'success'
     );
   }
