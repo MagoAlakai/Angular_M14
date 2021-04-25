@@ -23,6 +23,18 @@ export class PaintingsByShopService {
     return await this.httpClient.get(`${this.url}shops/${id}/paintings`).toPromise() as Promise<Painting[]>;
   }
 
+  getPaintingById = async(id:number):Promise<Painting>=>{
+    return await this.httpClient.get(`${this.url}paintings/${id}`).toPromise() as Promise<Painting>;
+  }
+
+  createPaintingInShop = async(painting:Painting):Promise<Object> =>{
+    return await this.httpClient.post(`${this.url}paintings`, painting).toPromise();
+  }
+
+  updatePaintingInShop = async(painting:Painting, id:number | string | null):Promise<Object> =>{
+    return await this.httpClient.put(`${this.url}paintings/${id}`, painting).toPromise();
+  }
+
   deletePaintings = async(id:number):Promise<Painting[]>=>{
     return await this.httpClient.delete(`${this.url}shops/${id}/paintings`).toPromise() as Promise<Painting[]>;
   }
@@ -30,7 +42,6 @@ export class PaintingsByShopService {
   deletePaintingById = async(id:number):Promise<Object>=>{
     return await this.httpClient.delete(`${this.url}paintings/${id}`).toPromise() as Promise<Object>;
   }
-  createPaintingInShop = async(painting:Painting):Promise<Object> =>{
-    return await this.httpClient.post(`${this.url}paintings`, painting).toPromise();
-  }
+
+
 }

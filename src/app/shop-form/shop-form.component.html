@@ -1,6 +1,6 @@
 <div class="container" style="min-height: 85vh">
 
-  <h1 class="display-6 text-center mt-3 mb-4">Create Shop</h1>
+  <h1 class="display-6 text-center mt-3 mb-4">Shop Form</h1>
 
   <div class="d-flex justify-content-center pb-4">
     <button [routerLink]="'/shops'" class="btn btn-outline-primary">Back to Shops List</button>
@@ -11,7 +11,7 @@
 
       <div class="form-group col-5">
         <label class="mb-2" for="name">Name</label>
-        <input [ngClass]="{'is-invalid':shopForm.get('name')?.hasError('required')}" class="form-control" id="name" placeholder="Enter name" formControlName='name'>
+        <input [ngClass]="{'is-invalid':shopForm.get('name')?.hasError('required')}" class="form-control" id="name" formControlName='name'>
         <div class="invalid-feedback"></div>
       </div>
       <div class="form-group col-2">
@@ -22,7 +22,7 @@
 
     </div>
     <div class="d-flex col-7 mx-auto mt-3">
-      <button type="submit" class="btn btn-outline-primary w-100" [disabled]="shopForm.invalid">Create Shop</button>
+      <button type="submit" class="btn btn-outline-primary w-100" [disabled]="shopForm.invalid">Submit</button>
     </div>
   </form>
 

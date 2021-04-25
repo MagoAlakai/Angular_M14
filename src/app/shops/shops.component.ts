@@ -23,7 +23,7 @@ export class ShopsComponent implements OnInit {
   }
 
   getShops = async() =>{
-    this.shops$ = this.shopsService.getAllShops();
+    return this.shops$ = this.shopsService.getAllShops();
   }
 
   deleteShop = async(id: number) => {
@@ -41,7 +41,7 @@ export class ShopsComponent implements OnInit {
         this.shopsService.deleteShop(id);
         this.enviarAlertDeleted();
       }
-    }).finally(()=> this.ngOnInit());
+    }).finally(()=> this.getShops());
   }
 
   enviarAlertDeleted(){

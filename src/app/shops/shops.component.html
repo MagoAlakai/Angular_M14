@@ -16,9 +16,9 @@
         <td>{{shop.name}}</td>
         <td>{{shop.capacity}} paintings</td>
         <td class="d-flex">
-          <i class="bi bi-eye-fill me-3" [routerLink]="'/shops/'+shop.id"></i>
-          <i class="bi bi-pencil-fill me-3" [routerLink]="'/shop-form/'+shop.id"></i>
-          <i class="bi bi-trash-fill me-3 text-danger" (click)="deleteShop(shop.id)"></i>
+          <a [routerLink]="['/shops',shop.id]"><i class="bi bi-eye-fill me-3 text-success" ></i></a>
+          <a [routerLink]="['/shop-form',shop.id]"><i class="bi bi-pencil-fill me-3 text-primary"></i></a>
+          <a><i class="bi bi-trash-fill me-3 text-danger" (click)="deleteShop(shop.id)"></i></a>
         </td>
       </tr>
     </tbody>

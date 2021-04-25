@@ -18,8 +18,16 @@ export class ShopsService {
     return await this.httpClient.get(`${this.url}shops`).toPromise() as Promise<Shop[]>;
   }
 
+  getShopById = async(id:number):Promise<Shop>=>{
+    return await this.httpClient.get(`${this.url}shops/${id}`).toPromise() as Promise<Shop>;
+  }
+
   createShop = async(shop:Shop):Promise<Object> =>{
     return await this.httpClient.post(`${this.url}shops`, shop).toPromise();
+  }
+
+  updateShop = async(shop:Shop, id: string | number | null):Promise<Object> =>{
+    return await this.httpClient.put(`${this.url}shops/${id}`, shop).toPromise();
   }
 
   deleteShop = async(id:number):Promise<Object>=>{

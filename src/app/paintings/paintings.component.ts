@@ -18,7 +18,11 @@ export class PaintingsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.paintings$ = this.paintingsService.getAllPaintings();
+    this.getPaintings();
+  }
+
+  getPaintings = async() =>{
+    return this.paintings$ = this.paintingsService.getAllPaintings();
   }
 
   deletePainting = async(id: number) => {
@@ -36,7 +40,7 @@ export class PaintingsComponent implements OnInit {
         this.paintingsByShopService.deletePaintingById(id);
         this.enviarAlertDeleted();
       }
-    }).finally(()=> this.ngOnInit());
+    }).finally(()=> this.getPaintings());
   }
 
   enviarAlertDeleted(){
