@@ -1,0 +1,32 @@
+<div class="container" style="min-height: 85vh">
+
+  <h1 class="display-6 text-center mt-3 mb-4">Login Form</h1>
+
+  <div class="d-flex justify-content-center pb-4">
+    <button [routerLink]="'/'" class="btn btn-outline-primary">Back to Home</button>
+  </div>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+
+    <div class="d-flex justify-content-center row">
+
+      <div class="form-group col-4">
+        <label class="mb-2" for="email">Email</label>
+        <input type="mail" [ngClass]="{'is-invalid':loginForm.get('email')?.hasError('required')}" class="form-control" id="email" placeholder="Enter email" formControlName='email'>
+        <div class="invalid-feedback"></div>
+      </div>
+
+      <div class="form-group col-4">
+        <label class="mb-2" for="password">Password</label>
+        <input type="password" [ngClass]="{'is-invalid':loginForm.get('password')?.hasError('required')}" class="form-control" id="password" formControlName='password'>
+        <div class="invalid-feedback"></div>
+      </div>
+
+    </div>
+
+    <div class="d-flex col-8 mx-auto mt-3">
+      <button type="submit" class="btn btn-outline-primary w-100" [disabled]="loginForm.invalid">Submit</button>
+    </div>
+  </form>
+
+</div>

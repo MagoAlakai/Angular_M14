@@ -8,10 +8,12 @@ import { HomeComponent } from './home/home.component';
 import { ShopFormComponent } from './shop-form/shop-form.component';
 import { PaintingsByShopComponent } from './paintings-by-shop/paintings-by-shop.component';
 import { PaintingFormComponent } from './painting-form/painting-form.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'shops', component: ShopsComponent},
   {path: 'shops/:id', component: PaintingsByShopComponent},
   {path: 'shop-form/:id', component: ShopFormComponent},

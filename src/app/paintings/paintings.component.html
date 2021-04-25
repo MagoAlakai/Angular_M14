@@ -21,7 +21,7 @@
           <td>{{painting.author_name}}</td>
           <td>Nº-{{painting.tienda_id}}</td>
           <td>
-            <i class="bi bi-pencil-fill me-3" [routerLink]="'/painting-form/'+painting.id"></i>
+            <i class="bi bi-pencil-fill me-3 text-primary" [routerLink]="'/painting-form/'+painting.id"></i>
             <i class="bi bi-trash-fill me-3 text-danger" (click)="deletePainting(painting.id)"></i>
           </td>
         </tr>
